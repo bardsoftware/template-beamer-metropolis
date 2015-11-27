@@ -44,77 +44,17 @@
   \RequirePackage[no-math]{fontspec}
 %    \end{macrocode}
 %
-% To simplify the check whether the |Fira| fonts are installed, a set macros is
-% defined.
-%
-% \begin{macro}{\checkfont}
-% Checks if a font is installed and increases |fontsnotfound| counter if not.
 %    \begin{macrocode}
-  \newcounter{fontsnotfound}
-  \newcommand{\checkfont}[1]{%
-    \suppressfontnotfounderror=1%
-    \font\x = "#1" at 10pt
-    \selectfont
-    \ifx\x\nullfont%
-      \stepcounter{fontsnotfound}%
-    \fi%
-    \suppressfontnotfounderror=0%
-  }
-
-%    \end{macrocode}
-% \end{macro}
-%
-% \begin{macro}{\iffontexists}
-% Resets the |fontsnotfound| counter and calls |\checkfont| for each font in the comma
-% separated list in the first argument.
-%    \begin{macrocode}
-  \newcommand{\iffontsexist}[3]{%
-    \setcounter{fontsnotfound}{0}%
-    \expandafter\forcsvlist\expandafter%
-    \checkfont\expandafter{#1}%
-    \ifnum\value{fontsnotfound}=0%
-      #2%
-    \else%
-      #3%
-    \fi%
-  }
-%    \end{macrocode}
-% \end{macro}
-%
-% Using the previously defined macros it is tried to load the |Fira| fonts. First the default
-% |Fira| name will be tried. Second the |Fira| fonts with the suffix OT -- used by some Linux
-% distributions -- will be tried. If this also fails a warning will be displayed and the
-% standard fonts will be used.
-%
-%    \begin{macrocode}
-  \iffontsexist{Fira Sans Light,%
-                Fira Sans Light Italic,%
-                Fira Sans,%
-                Fira Sans Italic}{%
-    \setsansfont[BoldFont={Fira Sans}]{Fira Sans Light}%
-  }{%
-    \iffontsexist{Fira Sans Light OT,%
-                  Fira Sans Light Italic OT,%
-                  Fira Sans OT,%
-                  Fira Sans Italic OT}{%
-      \setsansfont[BoldFont={Fira Sans OT}]{Fira Sans Light OT}%
-    }{%
-      \PackageWarning{beamerthememetropolis}{%
-        Could not find Fira Sans fonts.%
-      }
-    }
-  }
-  \iffontsexist{Fira Mono, Fira Mono Bold}{%
-    \setmonofont{Fira Mono}%
-  }{%
-    \iffontsexist{Fira Mono OT, Fira Mono Bold OT}{%
-      \setmonofont{Fira Mono OT}%
-    }{%
-      \PackageWarning{beamerthememetropolis}{%
-        Could not find Fira Mono fonts.%
-      }
-    }
-  }
+  \setsansfont[%
+    Path=fonts/,%
+    BoldFont={FiraSans-Regular},%
+    ItalicFont={FiraSans-LightItalic},%
+    BoldItalicFont={FiraSans-Italic}%
+  ]{FiraSans-Light}%
+  \setmonofont[%
+    Path=fonts/,%
+    BoldFont={FiraMono-Medium},%
+  ]{FiraMono-Regular}%
   \AtBeginEnvironment{tabular}{%
     \addfontfeature{Numbers={Monospaced}}%
   }
