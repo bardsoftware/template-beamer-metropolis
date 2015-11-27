@@ -11,13 +11,12 @@
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
 
-
+%% Содержание титульного листа
 \title{Metropolis}
 \subtitle{Современная тема для презентации}
 \date{\today}
 \author{Команда Папирии}
 \institute{\url{papeeria.com}}
-% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo/logo}}
 
 \begin{document}
 
@@ -29,8 +28,11 @@
 \tableofcontents[hideallsubsections]
 \end{frame}
 
+%% =================================================================
+%% Раздел "Введение"
 \section{Введение}
 
+%% Как включить тему
 \begin{frame}[fragile]
 \frametitle{Metropolis}
 
@@ -46,7 +48,7 @@
 Для компиляции необходимо использовать XeTeX. Все необходимые шрифты семейства \texttt{FiraSans} уже включены в шаблон.
 \end{frame}
 
-
+%% Как делать разделы
 \begin{frame}[fragile]
 \frametitle{Разделы}
 Разделы группируют слайды
@@ -56,8 +58,11 @@
 а \textsc{Metropolis} делает для них симпатичный индикатор прогресса \ldots
 \end{frame}
 
+%% =================================================================
+%% Раздел "Элементы"
 \section{Элементы}
 
+%% Типографические элементы
 \begin{frame}[fragile]
 \frametitle{Типографика}
 Если вы набираете это
@@ -71,7 +76,8 @@
 Тема устанавливает стили для \emph{разных} \alert{способов}  \textbf{выделения} текста.
 \end{frame}
 
-\begin{frame}{Тест шрифтов}
+%% Шрифты
+\begin{frame}{Какие бывают шрифты}
   \begin{itemize}
     \item Обычный
     \item \textit{Наклонный}
@@ -86,6 +92,7 @@
   \end{itemize}
 \end{frame}
 
+%% Таблицы
 \begin{frame}{Таблицы}
   \begin{table}
     \caption{Самые большие города в мире (согласно Википедии):}
@@ -101,6 +108,8 @@
     \end{tabular}
   \end{table}
 \end{frame}
+
+%% Двухколоночные слайды и текстовые блоки
 \begin{frame}{Текстовые блоки}
 Предопределены три окружения для текстовых блоков  опциональным цветом фона
 
@@ -138,16 +147,15 @@ Block content.
 \end{columns}
 \end{frame}
 
-
+%% Математические формулы
 \begin{frame}{Математические формулы}
   \begin{equation*}
     e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
   \end{equation*}
 \end{frame}
 
-\begin{frame}{Библиография}
-Добавим немного ссылок, чтобы продемонстрировать использование [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
-\end{frame}
+%% =================================================================
+%% Раздел "Заключение"
 
 \section{Заключение}
 
@@ -170,9 +178,10 @@ Attribution-ShareAlike 4.0 International License}.
 
 \plain{Вопросы?}
 
+%% 
 \begin{frame}[allowframebreaks]
 \frametitle{Список литературы}
-
+\nocite{*}
 \bibliography{References}
 \bibliographystyle{abbrv}
 
