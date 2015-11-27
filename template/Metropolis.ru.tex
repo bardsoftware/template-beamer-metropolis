@@ -1,0 +1,181 @@
+%% Copyright 2015 BarD Software s.r.o
+%% This is a showcase of Metropolis theme for Beamer
+%%
+%% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+%% International License (https://creativecommons.org/licenses/by-sa/4.0/).
+\documentclass[12pt]{beamer}
+\usetheme{metropolis}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+
+\title{Metropolis}
+\subtitle{Современная тема для презентации}
+\date{\today}
+\author{Команда Папирии}
+\institute{\url{papeeria.com}}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo/logo}}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+\frametitle{Содержание}
+\setbeamertemplate{section in toc}[sections numbered]
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Введение}
+
+\begin{frame}[fragile]
+\frametitle{Metropolis}
+
+\textsc{Metropolis} -- это тема для пакета Beamer с минимальным количеством визуального шума, разработанная Маттиасом Фогельгесангом.
+
+Тема включается стандартным способом:
+
+\begin{verbatim}
+    \documentclass{beamer}
+    \usetheme{metropolis}
+\end{verbatim}
+
+Для компиляции необходимо использовать XeTeX. Все необходимые шрифты семейства \texttt{FiraSans} уже включены в шаблон.
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Разделы}
+Разделы группируют слайды
+
+\begin{verbatim}    \section{Элементы}\end{verbatim}
+
+а \textsc{Metropolis} делает для них симпатичный индикатор прогресса \ldots
+\end{frame}
+
+\section{Элементы}
+
+\begin{frame}[fragile]
+\frametitle{Типографика}
+Если вы набираете это
+\begin{verbatim}
+Тема устанавливает стили для \emph{разных} 
+\alert{способов} \textbf{выделения} текста.
+\end{verbatim}
+
+\begin{center}то получаете это\end{center}
+
+Тема устанавливает стили для \emph{разных} \alert{способов}  \textbf{выделения} текста.
+\end{frame}
+
+\begin{frame}{Тест шрифтов}
+  \begin{itemize}
+    \item Обычный
+    \item \textit{Наклонный}
+    \item \textsc{Капитель}
+    \item \textbf{Жирный}
+    \item \textbf{\textit{Жирный наклонный}}
+    \item \textbf{\textsc{Жирная капитель}}
+    \item \texttt{Моноширинный}
+    \item \texttt{\textit{Наклонного моноширинного нет. А надо?}}
+    \item \texttt{\textbf{Жирный моноширинный}}
+    \item \texttt{\textbf{\textit{Жирного наклонного моноширинного тоже нет}}}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Таблицы}
+  \begin{table}
+    \caption{Самые большие города в мире (согласно Википедии):}
+    \begin{tabular}{lr}
+      \toprule
+      Город & Население\\
+      \midrule
+      Мехико & 20,116,842\\
+      Шанхай & 19,210,000\\
+      Пекин & 15,796,450\\
+      Стамбул & 14,160,467\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+\end{frame}
+\begin{frame}{Текстовые блоки}
+Предопределены три окружения для текстовых блоков  опциональным цветом фона
+
+\begin{columns}[T,onlytextwidth]
+% Левый столбец
+\column{0.5\textwidth}
+
+\begin{block}{Default}
+Block content.
+\end{block}
+
+\begin{alertblock}{Alert}
+Block content.
+\end{alertblock}
+
+\begin{exampleblock}{Example}
+Block content.
+\end{exampleblock}
+
+% Правый столбец
+\column{0.5\textwidth}
+\metroset{block=fill}
+
+\begin{block}{Default}
+Block content.
+\end{block}
+
+\begin{alertblock}{Alert}
+Block content.
+\end{alertblock}
+
+\begin{exampleblock}{Example}
+Block content.
+\end{exampleblock}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Математические формулы}
+  \begin{equation*}
+    e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
+  \end{equation*}
+\end{frame}
+
+\begin{frame}{Библиография}
+Добавим немного ссылок, чтобы продемонстрировать использование [allowframebreaks] \cite{knuth92,ConcreteMath,Simpson,Er01,greenwade93}
+\end{frame}
+
+\section{Заключение}
+
+\begin{frame}{Исходники и лицензия}
+Исходники этого шаблона и демонстрационной презентации находятся на гитхабе
+
+\begin{center}\url{github.com/bardsoftware/template-beamer-metropolis}\end{center}
+
+Официальный репозиторий темы Metropolis:
+
+\begin{center}\url{github.com/matze/mtheme}\end{center}
+
+Тема, шаблон и демонстрационная презентация распространяются на условиях
+\href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons
+Attribution-ShareAlike 4.0 International License}.
+
+\begin{center}\ccbysa\end{center}
+
+\end{frame}
+
+\plain{Вопросы?}
+
+\begin{frame}[allowframebreaks]
+\frametitle{Список литературы}
+
+\bibliography{References}
+\bibliographystyle{abbrv}
+
+\end{frame}
+
+\end{document}
