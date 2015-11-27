@@ -1,0 +1,189 @@
+%% This is a showcase of Metropolis theme for Beamer
+%%
+%% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+%% International License (https://creativecommons.org/licenses/by-sa/4.0/).
+\documentclass[12pt]{beamer}
+\usetheme{metropolis}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+%% Title page contents
+\title{Metropolis}
+\subtitle{A modern beamer theme}
+\date{\today}
+\author{Matthias Vogelgesang}
+\institute{Institute or miscellaneous information}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+\frametitle{Table of Contents}
+\setbeamertemplate{section in toc}[sections numbered]
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+%% =================================================================
+%% "Introduction" section
+\section{Introduction}
+
+%% How to use this theme
+\begin{frame}[fragile]
+\frametitle{Metropolis}
+
+The \textsc{Metropolis} theme is a Beamer theme with minimal visual noise
+inspired by the \href{https://github.com/hsrmbeamertheme/hsrmbeamertheme}{\textsc{hsrm} Beamer
+Theme} by Benjamin Weiss.
+
+  Enable the theme by loading
+  
+\begin{verbatim}
+    \documentclass{beamer}
+    \usetheme{metropolis}
+\end{verbatim}
+
+You need to use XeTeX for compiling. All required fonts are already included into this template.
+\end{frame}
+
+%% Making sections
+\begin{frame}[fragile]
+\frametitle{Sections}
+Sections group slides of the same topic
+
+\begin{verbatim}    \section{Elements}\end{verbatim}
+
+for which \textsc{Metropolis} provides a nice progress indicator \ldots
+\end{frame}
+
+%% =================================================================
+%% "Elements" section
+\section{Elements}
+
+%% Typography
+\begin{frame}[fragile]
+\frametitle{Typography}
+When you type this
+
+\begin{verbatim}The theme provides sensible defaults to
+\emph{emphasize} text, \alert{accent} parts
+or show \textbf{bold} results.\end{verbatim}
+
+\begin{center}it becomes\end{center}
+
+The theme provides sensible defaults to \emph{emphasize} text,
+  \alert{accent} parts or show \textbf{bold} results.
+\end{frame}
+
+%% Fonts
+\begin{frame}{Font feature test}
+  \begin{itemize}
+    \item Regular
+    \item \textit{Italic}
+    \item \textsc{SmallCaps}
+    \item \textbf{Bold}
+    \item \textbf{\textit{Bold Italic}}
+    \item \textbf{\textsc{Bold SmallCaps}}
+    \item \texttt{Monospace}
+    \item \texttt{\textit{Do you really need monospace italic?}}
+    \item \texttt{\textbf{Monospace Bold}}
+    \item \texttt{\textbf{\textit{Monospace Bold Italic is also missing}}}
+  \end{itemize}
+\end{frame}
+
+
+%% Tables
+\begin{frame}{Tables}
+  \begin{table}
+    \caption{Largest cities in the world (source: Wikipedia)}
+    \begin{tabular}{lr}
+      \toprule
+      City & Population\\
+      \midrule
+      Mexico City & 20,116,842\\
+      Shanghai & 19,210,000\\
+      Peking & 15,796,450\\
+      Istanbul & 14,160,467\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+\end{frame}
+\begin{frame}{Blocks}
+  Three different block environments are pre-defined and may be styled with an
+  optional background color.
+
+  \begin{columns}[T,onlytextwidth]
+    \column{0.5\textwidth}
+      \begin{block}{Default}
+        Block content.
+      \end{block}
+
+      \begin{alertblock}{Alert}
+        Block content.
+      \end{alertblock}
+
+      \begin{exampleblock}{Example}
+        Block content.
+      \end{exampleblock}
+
+    \column{0.5\textwidth}
+
+      \metroset{block=fill}
+
+      \begin{block}{Default}
+        Block content.
+      \end{block}
+
+      \begin{alertblock}{Alert}
+        Block content.
+      \end{alertblock}
+
+      \begin{exampleblock}{Example}
+        Block content.
+      \end{exampleblock}
+
+  \end{columns}
+\end{frame}
+\begin{frame}{Math}
+  \begin{equation*}
+    e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
+  \end{equation*}
+\end{frame}
+
+%% =================================================================
+%% "Conclusion" section
+
+\section{Conclusion}
+
+\begin{frame}{Summary}
+Get the source of this template and the demo presentation from
+
+\begin{center}\url{http://github.com/bardsoftware/template-beamer-metropolis}\end{center}
+
+Get the sources of Metropolis theme from the official repository
+
+  \begin{center}\url{http://github.com/matze/mtheme}\end{center}
+
+The theme \emph{itself} is licensed under a
+\href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons
+Attribution-ShareAlike 4.0 International License}.
+
+\begin{center}\ccbysa\end{center}
+
+\end{frame}
+
+\plain{Questions?}
+
+%% References
+\begin{frame}[allowframebreaks]
+\frametitle{References}
+\nocite{*}
+\bibliography{References}
+\bibliographystyle{abbrv}
+
+\end{frame}
+
+\end{document}
